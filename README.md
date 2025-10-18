@@ -1,2 +1,1 @@
-# BLACKIT
-BLACKIT Marketing Agency
+# BLACK-IT
