@@ -7,7 +7,11 @@
   <link rel="stylesheet" href="service.css" />
 </head>
 <body>
-
+<!-- شاشة التحميل -->
+  <div id="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Loading...</p>
+  </div>
   <!-- ✅ نفس الـ Navbar بتاع الصفحة الرئيسية -->
   <header>
   <div class="container">
@@ -16,6 +20,7 @@
 
       <!-- زر الموبايل -->
       <button class="menu-toggle" id="menu-toggle">☰</button>
+
 
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html#home">Home</a></li>
@@ -39,10 +44,12 @@
       <p><i><b>We create modern, responsive websites focused on great user experience, strong visuals, and conversion-driven performance</b></i></p>
       <div class="slider" data-folder="web">
         <div class="slider-track">
-            <img src="images/web/web1.png" alt="web">
-            <img src="images/web/web2.png" alt="web">
-            <img src="images/web/web3.png" alt="web">
+            <img src="images/web/web1.png" alt="web1" loading="lazy">
+            <img src="images/web/web2.png" alt="web2" loading="lazy">
+            <img src="images/web/web3.png" alt="web3" loading="lazy">
         </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
       </div>
     </section>
 
@@ -52,64 +59,67 @@
       <p><i><b>We turn ideas into visuals , delivering clean, creative, and impactful designs that elevate your brand’s message.</b></i></p>
       <div class="slider" data-folder="graphic">
         <div class="slider-track">
-          <img src="images/graph/graph1.png" alt="graph">
-          <img src="images/graph/graph2.png" alt="graph">
-          <img src="images/graph/graph3.png" alt="graph">
-          <img src="images/graph/graph5.png" alt="graph">
-          <img src="images/graph/graph6.png" alt="graph">
-          <img src="images/graph/graph7.png" alt="graph">
-          <img src="images/graph/graph8.png" alt="graph">
-          <img src="images/graph/graph12.png" alt="graph">
-          <img src="images/graph/graph13.png" alt="graph">
-          <img src="images/graph/graph14.png" alt="graph">
-          <img src="images/graph/graph15.png" alt="graph">
-          <img src="images/graph/graph17.png" alt="graph">
-          <img src="images/graph/graph18.png" alt="graph">
-          <img src="images/graph/graph19.png" alt="graph">
-          <img src="images/graph/graph60.jpg" alt="graph">
-          <img src="images/graph/graph61.jpg" alt="graph">
-          <img src="images/graph/graph62.jpg" alt="graph">
-          <img src="images/graph/graph63.jpg" alt="graph">
-          <img src="images/graph/graph64.jpg" alt="graph">
-          <img src="images/graph/graph65.jpg" alt="graph">
-          <img src="images/graph/graph66.jpg" alt="graph">
-          <img src="images/graph/graph67.jpg" alt="graph">
-          <img src="images/graph/graph68.jpg" alt="graph">
-          <img src="images/graph/graph69.jpg" alt="graph">
-          <img src="images/graph/graph70.jpg" alt="graph">
-          <img src="images/graph/graph71.jpg" alt="graph">
-          <img src="images/graph/graph72.jpg" alt="graph">
-          <img src="images/graph/graph73.jpg" alt="graph">
-          <img src="images/graph/graph53.jpg" alt="graph">
-          <img src="images/graph/graph55.jpg" alt="graph">
-          <img src="images/graph/graph54.jpg" alt="graph">
-          <img src="images/graph/graph56.jpg" alt="graph">
-          <img src="images/graph/graph57.jpg" alt="graph">
-          <img src="images/graph/graph74.jpg" alt="graph">
-          <img src="images/graph/graph20.jpg" alt="graph">
-          <img src="images/graph/graph22.jpg" alt="graph">
-          <img src="images/graph/graph23.jpg" alt="graph">
-          <img src="images/graph/graph38.jpg" alt="graph">
-          <img src="images/graph/graph39.jpg" alt="graph">
-          <img src="images/graph/graph40.jpg" alt="graph">
-          <img src="images/graph/graph25.jpg" alt="graph">
-          <img src="images/graph/graph26.jpg" alt="graph">
-          <img src="images/graph/graph28.jpg" alt="graph">
-          <img src="images/graph/graph35.jpg" alt="graph">
-          <img src="images/graph/graph41.jpg" alt="graph">
-          <img src="images/graph/graph47.jpg" alt="graph">
-          <img src="images/graph/graph33.jpg" alt="graph">
-          <img src="images/graph/graph34.jpg" alt="graph">
-          <img src="images/graph/graph29.jpg" alt="graph">
-          <img src="images/graph/graph30.jpg" alt="graph">
-          <img src="images/graph/graph44.jpg" alt="graph">
-          <img src="images/graph/graph45.jpg" alt="graph">
-          <img src="images/graph/graph50.jpg" alt="graph">
-          <img src="images/graph/graph52.jpg" alt="graph">
-          <img src="images/graph/graph75.jpg" alt="graph">
-          <img src="images/graph/graph51.jpg" alt="graph">
+          <img src="images/graph/graph1.png" alt="graph1" loading="lazy">
+          <img src="images/graph/graph2.png" alt="graph2" loading="lazy">
+          <img src="images/graph/graph3.png" alt="graph3" loading="lazy">
+          <img src="images/graph/graph5.png" alt="graph4" loading="lazy">
+          <img src="images/graph/graph6.png" alt="graph5" loading="lazy">
+          <img src="images/graph/graph7.png" alt="graph6" loading="lazy">
+          <img src="images/graph/graph8.png" alt="graph7" loading="lazy">
+          <img src="images/graph/graph12.png" alt="graph8" loading="lazy">
+          <img src="images/graph/graph13.png" alt="graph9" loading="lazy">
+          <img src="images/graph/graph14.png" alt="graph10" loading="lazy">
+          <img src="images/graph/graph15.png" alt="graph11" loading="lazy">
+          <img src="images/graph/graph17.png" alt="graph12" loading="lazy">
+          <img src="images/graph/graph18.png" alt="graph13" loading="lazy">
+          <img src="images/graph/graph19.png" alt="graph14" loading="lazy">
+          <img src="images/graph/graph60.jpg" alt="graph15" loading="lazy">
+          <img src="images/graph/graph61.jpg" alt="graph16" loading="lazy">
+          <img src="images/graph/graph62.jpg" alt="graph17" loading="lazy">
+          <img src="images/graph/graph63.jpg" alt="graph18" loading="lazy">
+          <img src="images/graph/graph64.jpg" alt="graph19" loading="lazy">
+          <img src="images/graph/graph65.jpg" alt="graph20" loading="lazy">
+          <img src="images/graph/graph66.jpg" alt="graph21" loading="lazy">
+          <img src="images/graph/graph67.jpg" alt="graph22" loading="lazy">
+          <img src="images/graph/graph68.jpg" alt="graph23" loading="lazy">
+          <img src="images/graph/graph69.jpg" alt="graph24" loading="lazy">
+          <img src="images/graph/graph70.jpg" alt="graph25" loading="lazy">
+          <img src="images/graph/graph71.jpg" alt="graph26" loading="lazy">
+          <img src="images/graph/graph72.jpg" alt="graph27" loading="lazy">
+          <img src="images/graph/graph73.jpg" alt="graph28" loading="lazy">
+          <img src="images/graph/graph53.jpg" alt="graph29" loading="lazy">
+          <img src="images/graph/graph55.jpg" alt="graph30" loading="lazy">
+          <img src="images/graph/graph54.jpg" alt="graph31" loading="lazy">
+          <img src="images/graph/graph56.jpg" alt="graph32" loading="lazy">
+          <img src="images/graph/graph57.jpg" alt="graph33" loading="lazy">
+          <img src="images/graph/graph74.jpg" alt="graph34" loading="lazy">
+          <img src="images/graph/graph20.jpg" alt="graph35" loading="lazy">
+          <img src="images/graph/graph22.jpg" alt="graph36" loading="lazy">
+          <img src="images/graph/graph23.jpg" alt="graph37" loading="lazy">
+          <img src="images/graph/graph38.jpg" alt="graph38" loading="lazy">
+          <img src="images/graph/graph39.jpg" alt="graph39" loading="lazy">
+          <img src="images/graph/graph40.jpg" alt="graph40" loading="lazy">
+          <img src="images/graph/graph25.jpg" alt="graph41" loading="lazy">
+          <img src="images/graph/graph26.jpg" alt="graph42" loading="lazy">
+          <img src="images/graph/graph28.jpg" alt="graph43" loading="lazy">
+          <img src="images/graph/graph35.jpg" alt="graph44" loading="lazy">
+          <img src="images/graph/graph41.jpg" alt="graph45" loading="lazy">
+          <img src="images/graph/graph47.jpg" alt="graph46" loading="lazy">
+          <img src="images/graph/graph33.jpg" alt="graph47" loading="lazy">
+          <img src="images/graph/graph34.jpg" alt="graph48" loading="lazy">
+          <img src="images/graph/graph29.jpg" alt="graph49" loading="lazy">
+          <img src="images/graph/graph30.jpg" alt="graph50" loading="lazy">
+          <img src="images/graph/graph44.jpg" alt="graph51" loading="lazy">
+          <img src="images/graph/graph45.jpg" alt="graph52" loading="lazy">
+          <img src="images/graph/graph50.jpg" alt="graph53" loading="lazy">
+          <img src="images/graph/graph52.jpg" alt="graph54" loading="lazy">
+          <img src="images/graph/graph75.jpg" alt="graph55" loading="lazy">
+          <img src="images/graph/graph51.jpg" alt="graph56" loading="lazy">
           </div>
-    </section>
+          <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+       </div>
+      </section>
 
     <!-- ✅ Branding -->
     <section id="Branding" class="services-section">
@@ -117,40 +127,42 @@
       <p><i><b>We craft memorable brand identities that reflect your values, stand out in the market, and leave a lasting impression.</b></i></p>
       <div class="slider" data-folder="branding">
         <div class="slider-track">
-            <img src="images/brand/brand1.png" alt="brand">
-            <img src="images/brand/brand4.png" alt="brand">
-            <img src="images/brand/brand5.png" alt="brand">
-            <img src="images/brand/brand6.png" alt="brand">
-            <img src="images/brand/brand7.png" alt="brand">
-            <img src="images/brand/brand8.png" alt="brand">
-            <img src="images/brand/brand9.png" alt="brand">
-            <img src="images/brand/brand10.png" alt="brand">
-            <img src="images/brand/brand11.png" alt="brand">
-            <img src="images/brand/brand12.png" alt="brand">
-            <img src="images/brand/brand13.png" alt="brand">
-            <img src="images/brand/brand14.png" alt="brand">
-            <img src="images/brand/brand15.png" alt="brand">
-            <img src="images/brand/brand16.png" alt="brand">
-            <img src="images/brand/brand17.png" alt="brand">
-            <img src="images/brand/brand18.png" alt="brand">
-            <img src="images/brand/brand19.png" alt="brand">
-            <img src="images/brand/brand20.png" alt="brand">
-            <img src="images/brand/brand21.png" alt="brand">
-            <img src="images/brand/brand22.png" alt="brand">
-            <img src="images/brand/brand23.png" alt="brand">
-            <img src="images/brand/brand24.png" alt="brand">
-            <img src="images/brand/brand26.png" alt="brand">
-            <img src="images/brand/brand27.png" alt="brand">
-            <img src="images/brand/brand28.png" alt="brand">
-            <img src="images/brand/brand29.png" alt="brand">
-            <img src="images/brand/brand30.png" alt="brand">
-            <img src="images/brand/brand31.png" alt="brand">
-            <img src="images/brand/brand32.png" alt="brand">
-            <img src="images/brand/brand33.png" alt="brand">
-            <img src="images/brand/brand34.png" alt="brand">
-            <img src="images/brand/brand35.png" alt="brand">
-            <img src="images/brand/brand36.png" alt="brand">
+            <img src="images/brand/brand1.png" alt="brand1" loading="lazy">
+            <img src="images/brand/brand4.png" alt="brand2" loading="lazy">
+            <img src="images/brand/brand5.png" alt="brand3" loading="lazy">
+            <img src="images/brand/brand6.png" alt="brand4" loading="lazy">
+            <img src="images/brand/brand7.png" alt="brand5" loading="lazy">
+            <img src="images/brand/brand8.png" alt="brand6" loading="lazy">
+            <img src="images/brand/brand9.png" alt="brand7" loading="lazy">
+            <img src="images/brand/brand10.png" alt="brand8" loading="lazy">
+            <img src="images/brand/brand11.png" alt="brand9" loading="lazy">
+            <img src="images/brand/brand12.png" alt="brand10" loading="lazy">
+            <img src="images/brand/brand13.png" alt="brand11" loading="lazy">
+            <img src="images/brand/brand14.png" alt="brand12" loading="lazy">
+            <img src="images/brand/brand15.png" alt="brand13" loading="lazy">
+            <img src="images/brand/brand16.png" alt="brand14" loading="lazy">
+            <img src="images/brand/brand17.png" alt="brand15" loading="lazy">
+            <img src="images/brand/brand18.png" alt="brand16" loading="lazy">
+            <img src="images/brand/brand19.png" alt="brand17" loading="lazy">
+            <img src="images/brand/brand20.png" alt="brand18" loading="lazy">
+            <img src="images/brand/brand21.png" alt="brand19" loading="lazy">
+            <img src="images/brand/brand22.png" alt="brand20" loading="lazy">
+            <img src="images/brand/brand23.png" alt="brand21" loading="lazy">
+            <img src="images/brand/brand24.png" alt="brand22" loading="lazy">
+            <img src="images/brand/brand26.png" alt="brand23" loading="lazy">
+            <img src="images/brand/brand27.png" alt="brand24" loading="lazy">
+            <img src="images/brand/brand28.png" alt="brand25" loading="lazy">
+            <img src="images/brand/brand29.png" alt="brand26" loading="lazy">
+            <img src="images/brand/brand30.png" alt="brand27" loading="lazy">
+            <img src="images/brand/brand31.png" alt="brand28" loading="lazy">
+            <img src="images/brand/brand32.png" alt="brand29" loading="lazy">
+            <img src="images/brand/brand33.png" alt="brand30" loading="lazy">
+            <img src="images/brand/brand34.png" alt="brand31" loading="lazy">
+            <img src="images/brand/brand35.png" alt="brand32" loading="lazy">
+            <img src="images/brand/brand36.png" alt="brand33" loading="lazy">
         </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
       </div>
     </section>
 
@@ -160,44 +172,51 @@
       <p><i><b>From concept to final cut, we produce high-quality visuals and videos that capture attention and tell your story powerfully.</b></i></p>
       <div class="slider" data-folder="mediaproduction">
         <div class="slider-track">
-          <img src="images/prodaction/media pro1.png" alt="mediaproduction">
-          <img src="images/prodaction/media pro2.png" alt="mediaproduction">
-          <img src="images/prodaction/media pro3.png" alt="mediaproduction">
-          <img src="images/prodaction/media pro4.png" alt="mediaproduction">
-          <img src="images/prodaction/media pro5.png" alt="mediaproduction">
-          <img src="images/prodaction/media pro6.png" alt="mediaproduction">
-          <img src="images/prodaction/media pro7.png" alt="mediaproduction">
-          <img src="images/prodaction/media pro8.png" alt="mediaproduction">
-          <img src="images/prodaction/media pro9.png" alt="mediaproduction">
-          
+          <img src="images/prodaction/media pro1.png" alt="mediaproduction1" loading="lazy">
+          <img src="images/prodaction/media pro2.png" alt="mediaproduction2" loading="lazy">
+          <img src="images/prodaction/media pro3.png" alt="mediaproduction3" loading="lazy">
+          <img src="images/prodaction/media pro4.png" alt="mediaproduction4" loading="lazy">
+          <img src="images/prodaction/media pro5.png" alt="mediaproduction5" loading="lazy">
+          <img src="images/prodaction/media pro6.png" alt="mediaproduction6" loading="lazy">
+          <img src="images/prodaction/media pro7.png" alt="mediaproduction7" loading="lazy">
+          <img src="images/prodaction/media pro8.png" alt="mediaproduction8" loading="lazy">
+          <img src="images/prodaction/media pro9.png" alt="mediaproduction9" loading="lazy">
         </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
       </div>
     </section>
 
     <!-- ✅ Media Buying -->
     <section id="Media Buying" class="services-section">
       <h2>Media Buying</h2>
-      <p><i><b>Maximize your ROI with strategic paid advertising
-
-Our Media Buying team creates data-driven ad campaigns that deliver measurable growth. We go beyond simple targeting , analyzing audience behavior, platform performance, and creative impact to place the right message in front of the right people at the right time.</b></i></p>
-<div class="media-list">
-  <h3>Services included:</h3>
-  <ul><b>
-    <li>Strategy & budget planning</li>
-    <li>Audience segmentation and targeting optimization</li>
-    <li>A/B testing for creatives and copy</li>
-    <li>Campaign setup across Meta, TikTok, and Google Search</li>
-    <li>Real-time performance monitoring and optimization</li> 
-  </b></ul>
-  <p><i><b>The goal: lower your Cost Per Acquisition (CPA) and increase Return on Ad Spend (ROAS) so your ads scale profitably and bring lasting customers.
-    Schedule a Free Audit Call to uncover the next opportunities for growth.</b></i></p>
-</div>
-      <div class="slider" data-folder="mediabuying">
-        <div class="slider-track">
-            <img src="images/mediabuy/mediabuy1.png" alt="mediabuy">
-            <img src="images/social/social2.png" alt="social">
-        </div></div>
-      
+      <div class="media-buying-container">
+        <div class="media-buying-text">
+          <p><i><b>Maximize your ROI with strategic paid advertising</b></i></p>
+          <p><i><b>Our Media Buying team creates data-driven ad campaigns that deliver measurable growth. We go beyond simple targeting , analyzing audience behavior, platform performance, and creative impact to place the right message in front of the right people at the right time.</b></i></p>
+          <div class="media-list">
+            <h3>Services included:</h3>
+            <ul><b>
+              <li>Strategy & budget planning</li>
+              <li>Audience segmentation and targeting optimization</li>
+              <li>A/B testing for creatives and copy</li>
+              <li>Campaign setup across Meta, TikTok, and Google Search</li>
+              <li>Real-time performance monitoring and optimization</li> 
+            </b></ul>
+          </div>
+        </div>
+        <div class="media-buying-slider">
+          <div class="slider" data-folder="mediabuying">
+            <div class="slider-track">
+                <img src="images/mediabuy/mediabuy1.png" alt="mediabuy1" loading="lazy">
+                <img src="images/social/social2.png" alt="social2" loading="lazy">
+            </div>
+           
+          </div>
+          <p class="media-buying-conclusion"><i><b>The goal: lower your Cost Per Acquisition (CPA) and increase Return on Ad Spend (ROAS) so your ads scale profitably and bring lasting customers.
+            Schedule a Free Audit Call to uncover the next opportunities for growth.</b></i></p>
+        </div>
+      </div>
     </section>
 
     <!-- ✅ Social Media -->
@@ -206,19 +225,13 @@ Our Media Buying team creates data-driven ad campaigns that deliver measurable g
       <p><i><b>We build your brand’s online presence with engaging content, smart strategies, and community-driven growth that converts followers into loyal customers.</b></i></p>
       <div class="slider" data-folder="social">
         <div class="slider-track">
-         <img src="images/social/social1.png" alt="social">
-         <img src="images/social/social2.png" alt="social">
+         <img src="images/social/social1.png" alt="social1" loading="lazy">
+         <img src="images/social/social2.png" alt="social2" loading="lazy">
 
         </div>
+    
       </div>
     </section>
-
-    <!-- ✅ Content Creation --
-    <section id="content" class="service-section">
-      <h2>Content Creation</h2>
-      <p>Engaging content that tells your brand story.</p>
-      <div class="slider" data-folder="content"></div>
-    </section>-->
 
     <!-- ✅ Digital Marketing Strategy -->
     <section id="Marketing Strategy" class="services-section">
@@ -226,15 +239,43 @@ Our Media Buying team creates data-driven ad campaigns that deliver measurable g
       <p><i><b>A clear plan that grows with your goals.</b></i></p>
       <div class="slider" data-folder="marketing">
         <div class="slider-track">
-          <img src="images/marketing/Screenshot 2025-10-18 145204.png" alt="marketing">
-          <img src="images/marketing/Screenshot 2025-10-18 145220.png" alt="marketing">
+          <img src="images/marketing/Screenshot 2025-10-18 145204.png" alt="marketing1" loading="lazy">
+          <img src="images/marketing/Screenshot 2025-10-18 145220.png" alt="marketing2" loading="lazy">
         </div>
+    
       </div>
     </section>
   </main>
 
+   <footer>
+        <div class="container">
+            <p>© 2025 <b>BLACKIT</b> | All rights reserved. | Designed by <i><b>Samaa Kholef</b></i></p>
+        </div>
+    </footer>
+
   <script src="service.js"></script>
   <link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+<!--<script src="script.js" defer></script>-->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    // لما أدوس على الـ 3 شرط
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    // لما أدوس على أي لينك في القائمة
+    document.querySelectorAll("#nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+      });
+    });
+  });
+</script>
+
+
 </body>
 </html>

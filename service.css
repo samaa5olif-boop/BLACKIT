@@ -1,3 +1,39 @@
+/* شاشة التحميل */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.loading.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #121521;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -15,8 +51,9 @@ header {
   z-index: 1000;
   backdrop-filter: blur(4px);
 }
+
 main {
-  padding-top: 70px; /* أو زودي الرقم حسب ارتفاع الـ nav عندك */
+  padding-top: 60px; /* أو زودي الرقم حسب ارتفاع الـ nav عندك */
 }
 
 nav {
@@ -25,6 +62,7 @@ nav {
   align-items: center;
   padding: 18px 0;
 }
+
 section {
   text-align: center;
 }
@@ -38,9 +76,63 @@ section {
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  nav {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: #121521;
+    cursor: pointer;
+    z-index: 1002;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    padding: 40px 20px;
+    gap: 20px;
+    z-index: 1001;
+  }
+
+  .nav-links.show {
+    display: flex;
+    animation: slideIn 0.4s ease forwards;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .nav-links a {
+    color: #121521;
+    text-decoration: none;
+    font-weight: 600;
+  }
+}
+
 .services-section:nth-child(even) {
   background-color: #fafafa;
 }
+
 .services-section:nth-child(odd) {
   background-color: #fff;
 }
@@ -53,6 +145,7 @@ section {
   position: relative;
   display: inline-block;
 }
+
 .services-section h2::after {
   content: '';
   display: block;
@@ -73,30 +166,47 @@ section {
   padding: 80px 20px;
 }
 
-.slider button {
-  background-color: rgba(18, 21, 33, 0.6);
-}
-.slider button:hover {
-  background-color: rgba(18, 21, 33, 0.9);
-}
-
-.slider-track img {
-  border: 1px solid #ddd;
-  background-color: #fff;
+/* Media Buying Container */
+.media-buying-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
 }
 
+.media-buying-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
 
+.media-buying-slider {
+  flex: 1;
+  min-width: 300px;
+}
+
+.media-buying-conclusion {
+  margin-top: 20px;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+}
 
 .media-list {
+  margin: 20px 0;
+}
+
+.media-list h3 {
   text-align: center;
-  margin: 40px auto;
-  max-width: 800px;
-}*/
+  margin-bottom: 15px;
+  color: #121521;
+}
 
 .media-list ul {
-  list-style-position: inside; /* يخلي النقط جوه النص */
-  text-align: left; /* يخلي النص والنقط في صف واحد */
-  display: inline-block; /* يخليها تبان في النص */
+  list-style-position: inside;
+  text-align: left;
   line-height: 1.8;
   font-size: 1.1rem;
   margin: 0 auto 20px;
@@ -108,14 +218,98 @@ section {
   text-align: left;
 }
 
+/* تحسينات السلايدر */
+.slider {
+  width: 100%;
+  max-width: 1000px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  margin: 30px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: pan-y; /* السماح بالسحب العمودي */
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  align-items: center;
+  gap: 20px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.slider-track img {
+  width: calc(50% - 10px);
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center; 
+  flex: 0 0 calc(50% - 10px);
+  border-radius: 10px;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+/* تأثير التكبير عند مرور الماوس */
+.slider-track img:hover {
+  transform: scale(1.05);
+}
+
+/* أزرار التحكم - تظهر دائمًا */
+.slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(18, 21, 33, 0.8);
+  color: white;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+  z-index: 10;
+  opacity: 1; /* تظهر دائمًا */
+  display: block; /* تأكد من ظهورها */
+}
+
+.slider button:hover {
+  background-color: rgba(18, 21, 33, 0.9);
+}
+
+.slider .prev {
+  left: 10px;
+}
+
+.slider .next {
+  right: 10px;
+}
+
+.slider-track img {
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+footer {
+  background-color: #dad6d6;
+  color: #131212;
+  text-align: center;
+  padding: 20px 0;
+}
 
 @keyframes fadeInUp {
   to {
     opacity: 1;
-    transform: translateY(3);
+    transform: translateY(0);
   }
 }
-
 
 /* يظهر بس على الموبايل */
 @media (max-width: 768px) {
@@ -124,20 +318,102 @@ section {
   }
 
   .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 15px;
-    background: #fff;
-    padding: 20px;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  border-radius: 0;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  overflow-y: auto;
+}
+
+/* أضيفي هذا الكود الجديد */
+.close-menu {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .close-menu {
+    display: block;
   }
+  
+  .nav-links.show {
+    display: flex;
+  }
+}
 
   .nav-links.show {
     display: flex;
+  }
+  
+  /* تحسينات السلايدر للجوال */
+  .slider {
+    height: auto;
+    max-width: 100%;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  .slider-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    padding: 10px;
+    transform: none !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    height: auto;
+  }
+
+  .slider-track img {
+    width: 85vw;
+    height: auto;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .slider button {
+    display: none; /* إخفاء الأزرار في الجوال */
+  }
+  
+  /* Media Buying Mobile Layout */
+  .media-buying-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .media-buying-text, 
+  .media-buying-slider {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .media-buying-text {
+    text-align: center;
+  }
+  
+  .media-list ul {
+    text-align: center;
+  }
+  
+  .media-list li {
+    text-align: center;
   }
 }
 
@@ -198,83 +474,6 @@ section {
   margin-bottom: 30px;
 }
 
-/* Slider */
-.slider {
-  width: 100%;
-  max-width: 1000px;
-  height: 400px;
-  overflow: hidden;
-  position: relative;
-  margin: 30px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.slider-track {
-  display: flex;
-  transition: transform 0.8s ease-in-out;
-  align-items: center;
-  gap: 20px;
-  padding: 0 10px;
-  box-sizing: border-box;
-}
-
-.slider-track img {
-  width: calc(50% - 10px);
-  height: auto;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center; 
-  flex: 0 0 calc(50% - 10px);
-  border-radius: 10px;
-  background-color: #fff;
-  transition: transform 0.3s ease;
-}
-
-/* تأثير التكبير عند مرور الماوس */
-.slider-track img:hover {
-  transform: scale(1.05);
-}
-/*.slider img:hover {
-  transform: scale(1.05); /* تكبير بسيط وأنيق 
-}*/
-
-/* أزرار التحكم */
-.slider button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.4);
-  color: white;
-  border: none;
-  font-size: 28px;
-  cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background 0.3s ease, opacity 0.3s ease;
-  z-index: 10;
-  opacity: 0;
-}
-
-.slider.paused button {
-  opacity: 1;
-}
-
-.slider button:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.slider .prev {
-  left: 10px;
-}
-
-.slider .next {
-  right: 10px;
-}
 /* 📱 الموبايلات */
 @media (max-width: 600px) {
   body {
@@ -299,31 +498,6 @@ section {
 
   .service-section p {
     font-size: 1rem;
-  }
-
-  /* ✅ السلايدر في الموبايل: صورتين تحت بعض */
-  .slider {
-    height: auto;
-    max-width: 100%;
-    box-shadow: none;
-  }
-
-  .slider-track {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 10px;
-    transform: none !important;
-  }
-
-  .slider-track img {
-    width: 100%;
-    height: auto;
-    flex: none;
-  }
-
-  .slider button {
-    display: none;
   }
 }
 
@@ -377,4 +551,14 @@ section {
     height: 450px;
   }
 }
- 
+/* تأكيد ظهور كل الصور في اللابتوب */
+@media (min-width: 769px) {
+  .slider-track {
+    flex-wrap: nowrap;
+    overflow-x: visible;
+  }
+  
+  .slider {
+    overflow: hidden;
+  }
+}
