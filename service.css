@@ -92,7 +92,8 @@ section {
   }
 
   .nav-links {
-    display: none;
+    display: flex;
+    list-style: none;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -102,9 +103,34 @@ section {
     background-color: #fff;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
     padding: 40px 20px;
-    gap: 20px;
+    gap: 15px;
     z-index: 1001;
   }
+
+.nav-links a {
+  position: relative;
+  padding: 5px 0;
+  font-size: 13px; /* تصغير حجم الخط */
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #121521;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
 
   .nav-links.show {
     display: flex;
@@ -267,29 +293,35 @@ section {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(18, 21, 33, 0.8);
-  color: white;
+  background-color: white;
   border: none;
-  font-size: 28px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
   z-index: 10;
-  opacity: 1; /* تظهر دائمًا */
-  display: block; /* تأكد من ظهورها */
+  color: #525866;
+  font-size: 20px;
+  opacity: 1;
 }
 
 .slider button:hover {
-  background-color: rgba(18, 21, 33, 0.9);
+  background-color: #525866;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .slider .prev {
-  left: 10px;
+  left: 15px;
 }
 
 .slider .next {
-  right: 10px;
+  right: 15px;
 }
 
 .slider-track img {
@@ -320,19 +352,30 @@ footer {
   .nav-links {
   display: none;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
   background: #fff;
   padding: 20px;
-  position: fixed;
-  top: 0;
-  right: 0;
+  position: absolute;
+  top: 70px;
+  right: 15px;
   height: 100vh;
-  width: 250px;
-  border-radius: 0;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  width: calc(100% - 30px);
+   max-width: 280px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
   z-index: 1001;
   overflow-y: auto;
 }
+
+.nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 8px 0;
+  }
 
 /* أضيفي هذا الكود الجديد */
 .close-menu {
@@ -562,3 +605,4 @@ footer {
     overflow: hidden;
   }
 }
+

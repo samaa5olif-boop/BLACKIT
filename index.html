@@ -120,71 +120,108 @@
         </div>
     </section>
 
-    <section id="portfolio" class="portfolio">
+   <section id="portfolio" class="portfolio">
   <div class="container">
     <h2 class="section-title">Portfolio</h2>
-    <div class="portfolio-grid">
+    
+    <div class="portfolio-slider-container">
+      <div class="portfolio-slider">
+        <!-- Portfolio Item 1 -->
+        <div class="portfolio-item">
+          <a href="service.html#Web Development">
+            <div class="portfolio-img-container">
+              <img src="programming.png" alt="Web Projects" class="portfolio-img">
+            </div>
+            <div class="portfolio-info">
+              <h3>Web Projects</h3>
+              <p><i>Web Development</i></p>
+            </div>
+          </a>
+        </div>
 
-      <div class="portfolio-item">
-        <a href="service.html#Web Development">
-          <img src="programming.png" alt="Web Projects" class="portfolio-img">
-          <div class="portfolio-info">
-            <h3>Web Projects</h3>
-            <p><i>Web Development</i></p>
-          </div>
-        </a>
+        <!-- Portfolio Item 2 -->
+        <div class="portfolio-item">
+          <a href="service.html#Graphic Design">
+            <div class="portfolio-img-container">
+              <img src="graph.png" alt="Graphic Projects" class="portfolio-img">
+            </div>
+            <div class="portfolio-info">
+              <h3>Graphic Projects</h3>
+              <p><i>Graphic Design</i></p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Portfolio Item 3 -->
+        <div class="portfolio-item">
+          <a href="service.html#Branding">
+            <div class="portfolio-img-container">
+              <img src="ai-edited-image-1758733743119.jpg" alt="Branding Projects" class="portfolio-img">
+            </div>
+            <div class="portfolio-info">
+              <h3>Branding Projects</h3>
+              <p><i>Branding</i></p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Portfolio Item 4 -->
+        <div class="portfolio-item">
+          <a href="service.html#Media Production">
+            <div class="portfolio-img-container">
+              <img src="mediapro.png" alt="Media Production Projects" class="portfolio-img">
+            </div>
+            <div class="portfolio-info">
+              <h3>Media Production Projects</h3>
+              <p><i>Media Production</i></p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Portfolio Item 5 -->
+        <div class="portfolio-item">
+          <a href="service.html#Media Buying">
+            <div class="portfolio-img-container">
+              <img src="mediabuy.png" alt="Media Buying Projects" class="portfolio-img">
+            </div>
+            <div class="portfolio-info">
+              <h3>Media Buying Projects</h3>
+              <p><i>Media Buying</i></p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Portfolio Item 6 -->
+        <div class="portfolio-item">
+          <a href="service.html#Social Media">
+            <div class="portfolio-img-container">
+              <img src="ai-edited-image-1758732849528.jpg" alt="Social Media Projects" class="portfolio-img">
+            </div>
+            <div class="portfolio-info">
+              <h3>Social Media Projects</h3>
+              <p><i>Social Media</i></p>
+            </div>
+          </a>
+        </div>
       </div>
-
-      <div class="portfolio-item">
-        <a href="service.html#Graphic Design">
-          <img src="graph.png" alt="Graphic Projects" class="portfolio-img">
-          <div class="portfolio-info">
-            <h3>Graphic Projects</h3>
-            <p><i>Graphic Design</i></p>
-          </div>
-        </a>
-      </div>
-
-      <div class="portfolio-item">
-        <a href="service.html#Branding">
-          <img src="ai-edited-image-1758733743119.jpg" alt="Branding Projects" class="portfolio-img">
-          <div class="portfolio-info">
-            <h3>Branding Projects</h3>
-            <p><i>Branding</i></p>
-          </div>
-        </a>
-      </div>
-
-      <div class="portfolio-item">
-        <a href="service.html#Media Production">
-          <img src="mediapro.png" alt="Media Production Projects" class="portfolio-img">
-          <div class="portfolio-info">
-            <h3>Media Production Projects</h3>
-            <p><i>Media Production</i></p>
-          </div>
-        </a>
-      </div>
-
-      <div class="portfolio-item">
-        <a href="service.html#Media Buying">
-          <img src="mediabuy.png" alt="Media Buying Projects" class="portfolio-img">
-          <div class="portfolio-info">
-            <h3>Media Buying Projects</h3>
-            <p><i>Media Buying</i></p>
-          </div>
-        </a>
-      </div>
-
-      <div class="portfolio-item">
-        <a href="service.html#Social Media">
-          <img src="ai-edited-image-1758732849528.jpg" alt="Social Media Projects" class="portfolio-img">
-          <div class="portfolio-info">
-            <h3>Social Media Projects</h3>
-            <p><i>Social Media</i></p>
-          </div>
-        </a>
-      </div>
-
+      
+      <!-- أزرار التنقل للسلايدر -->
+      <button class="slider-btn prev-btn" aria-label="Previous slide">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="slider-btn next-btn" aria-label="Next slide">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      
+     <!-- بدل الشريط -->
+<div class="slider-dots"></div>
+    
+    <!-- زر More تحت السلايدر -->
+    <div class="portfolio-footer">
+      <a href="service.html" class="portfolio-more-btn">
+        View All Projects
+        <i class="fas fa-arrow-right"></i>
+      </a>
     </div>
   </div>
 </section>
@@ -244,7 +281,7 @@
                 </div>
             </div>
             
-            <div class="contact-form">
+            <!--<div class="contact-form">
                 <div class="form-group">
                     <label for="name">Your Name</label>
                     <input type="text" id="name" placeholder="Enter your name">
@@ -258,7 +295,7 @@
                     <textarea id="message" rows="5" placeholder="Enter your message"></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Send Message</button>
-            </div>
+            </div>-->
         </div>
     </section>
 
