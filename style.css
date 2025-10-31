@@ -435,10 +435,14 @@ section {
     align-items: center;
     gap: 8px;
     margin-top: 30px;
+    pointer-events: none !important; /* مهم: منع التفاعل مع النقاط */
+    position: relative;
+    z-index: 1;
   }
   
   .slider-dot {
     border-radius: 50%;
+    pointer-events: none !important;
     transition: all 0.3s ease;
   }
   
